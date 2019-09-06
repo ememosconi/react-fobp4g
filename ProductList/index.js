@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 import ProductAlert from '../ProductAlert'
 import '../style.css'
 
-const ProductList=({products})=>{
+const ProductList=({products,baseurl})=>{
 
 
   const shareHandler = () =>{
@@ -14,13 +14,17 @@ const ProductList=({products})=>{
     window.alert('You will be notified when the product goes on sale');
   }
 
+  const handleTo = () =>{
+    this.props.history.push('/products/1')
+  }
+
   return (
     <div>
       <h2>Products</h2>
-      {products.map(product => 
+      {products.map((product, index) => 
       <div>
         <h3>
-          <Link title={`${product.name} details`}>{product.name}</Link>
+          <Link title={`${product.name} details`} to={`/products/${index}`}>{product.name}</Link>
         </h3>
         {product.description&&<p>{`Descripcion: ${product.description}`}</p>}
         <button onClick={shareHandler}>
@@ -35,4 +39,4 @@ const ProductList=({products})=>{
     
 )};
 
-export default ProductList;
+export default withRouter(ProductList);
