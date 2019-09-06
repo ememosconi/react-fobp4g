@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import {store} from './store';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import TopBar from './TopBar';
@@ -7,6 +10,7 @@ import ProductDetails from './ProductDetails';
 import {products} from './products'
 import{Link, BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import './style.css';
+
 
 
 class App extends Component {
@@ -44,4 +48,10 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+const rootComponent =(
+<Provider store={store}>
+    <App />
+</Provider>
+);
+
+render(rootComponent, document.getElementById('root'));
