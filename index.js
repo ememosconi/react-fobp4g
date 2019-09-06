@@ -38,7 +38,7 @@ class App extends Component {
       <Router> 
       <div>
           <TopBar></TopBar>
-          <div class="container">
+          <div className="container">
             <ProductList products = {products}></ProductList>
           </div>
           
