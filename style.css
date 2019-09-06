@@ -1,6 +1,4 @@
-h1, p {
-  font-family: Lato;
-}
+
 
 /* Global Styles */
 
@@ -19,9 +17,10 @@ body {
 .container {
   display: flex;
   flex-direction: row;
+  padding: 0 16px;
 }
 
-router-outlet + *  {
+.router-outlet{
   padding: 0 16px;
 }
 
