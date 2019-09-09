@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import TopBar from './TopBar';
 import ProductList from './ProductList';
-import ProductDetails from './ProductDetails';
+import ProductDetailsContainer from './containers/ProductDetailsContainer';
 import {products} from './products'
 import{Link, BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import './style.css';
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   renderDetails(){
-    return <ProductDetails></ProductDetails>
+    return <ProductDetailsContainer></ProductDetailsContainer>
   }
   
 

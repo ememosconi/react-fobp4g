@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
+import {cart} from '../reducers/cart'
 
-const reducers = state => state;
 
-export const store = createStore(reducers,{});
+export const store = createStore(cart,{});
