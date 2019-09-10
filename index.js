@@ -6,7 +6,8 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import TopBar from './TopBar';
 import ProductList from './ProductList';
-import CartContainer from './containers/CartContainer'
+import CartContainer from './containers/CartContainer';
+import Shipping from './Shipping';
 import ProductDetailsContainer from './containers/ProductDetailsContainer';
 import {products} from './products'
 import{Link, BrowserRouter as Router,Route,Switch} from 'react-router-dom'
@@ -32,6 +33,9 @@ class App extends Component {
   renderCart(){
     return <CartContainer> </CartContainer>
   }
+  renderShipping(){
+    return <Shipping></Shipping>
+  }
   
 
   render() {
@@ -43,6 +47,7 @@ class App extends Component {
             <Route exact path='/' component={this.renderHome} ></Route>
             <Route exact path='/products/:productId' component={this.renderDetails} ></Route>
             <Route exact path='/cart' component={this.renderCart} ></Route>
+            <Route exact path='/shipping' component={this.renderShipping} ></Route>
           </div>
           
         </div>
