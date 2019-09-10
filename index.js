@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import TopBar from './TopBar';
 import ProductList from './ProductList';
+import CartContainer from './containers/CartContainer'
 import ProductDetailsContainer from './containers/ProductDetailsContainer';
 import {products} from './products'
 import{Link, BrowserRouter as Router,Route,Switch} from 'react-router-dom'
@@ -28,6 +29,9 @@ class App extends Component {
   renderDetails(){
     return <ProductDetailsContainer></ProductDetailsContainer>
   }
+  renderCart(){
+    return <CartContainer> </CartContainer>
+  }
   
 
   render() {
@@ -38,6 +42,7 @@ class App extends Component {
           <div className="container">
             <Route exact path='/' component={this.renderHome} ></Route>
             <Route exact path='/products/:productId' component={this.renderDetails} ></Route>
+            <Route exact path='/cart' component={this.renderCart} ></Route>
           </div>
           
         </div>

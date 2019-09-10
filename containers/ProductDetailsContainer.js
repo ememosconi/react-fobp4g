@@ -19,8 +19,6 @@ class ProductDetailsContainer extends Component{
   render(){
     const productId = this.props.match.params.productId;
     const product = products[productId];
-    console.log (product)
-
     return <div>{
       product&&<ProductDetails product={product} handleBuyClick={()=>this.handleBuyClick(product)}> </ProductDetails>
     }
