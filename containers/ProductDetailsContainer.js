@@ -7,13 +7,9 @@ import {products} from '../products';
 import {addToCart} from '../actions'
 
 class ProductDetailsContainer extends Component{
-  constructor(props){
-    super(props);
-    this.handleBuyClick= this.handleBuyClick.bind(this)
-  }
   
   
-  
+
   handleBuyClick = (product) =>{
     this.props.addToCart(product);
     
@@ -39,7 +35,7 @@ class ProductDetailsContainer extends Component{
 }
 
 const mapDispatchToProps = dispatch =>({
-  addToCart
+  addToCart: item =>dispatch(addToCart(item))
 });
 
 export default compose(

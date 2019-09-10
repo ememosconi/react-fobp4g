@@ -1,12 +1,17 @@
 
 import {ADD_TO_CART}from'../actions'
 
-export const cart = (state={},action) =>{
+export const cart = (state=[],action) =>{
+  console.log( action.type)
   switch(action.type){
-     case ADD_TO_CART:{
-       return {...state,items:state.items.concat(action.item)}
+     case 'ADD_TO_CART':{
+       console.log( action.item)
+       return [...state,action.item]
     }
-    default: return state;
+    default: {
+      console.log("PASE POR DEFAULT")
+      return state
+    };
   }
  
 
