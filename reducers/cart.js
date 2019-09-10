@@ -6,11 +6,11 @@ export const cart = (state=[],action) =>{
   switch(action.type){
      case 'ADD_TO_CART':{
        console.log( action.item)
-       return [...state,action.item]
+       return state.concat(action.item)
     }
     default: {
       console.log("PASE POR DEFAULT")
-      return state
+      return state || []
     };
   }
  
