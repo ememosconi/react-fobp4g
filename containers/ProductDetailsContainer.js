@@ -11,6 +11,7 @@ class ProductDetailsContainer extends Component{
   
 
   handleBuyClick = (product) =>{
+     window.alert('Your product has been added to the cart!');
     this.props.addToCart(product);
     
 
