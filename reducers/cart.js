@@ -8,6 +8,10 @@ export const cart = (state=[],action) =>{
        console.log( action.item)
        return state.concat(action.item)
     }
+      case 'CHECK_OUT_CART':{
+        
+        return [];
+      }
     default: {
       console.log("PASE POR DEFAULT")
       return state || []
