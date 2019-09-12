@@ -9,7 +9,7 @@ const TopBar =()=> (
       <h1>My Store</h1>
      </Link> 
     
-    <a  class="button fancy-button"><Icon class="material-icons">shopping_cart</Icon>Checkout</a>
+    <Link class="button fancy-button" to={'/cart'}><Icon class="material-icons">shopping_cart</Icon>Checkout</Link>
   </div>
   
   );

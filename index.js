@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import {store} from './store';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import TopBar from './TopBar';
 import ProductList from './ProductList';
-import ProductDetails from './ProductDetails';
+import CartContainer from './containers/CartContainer';
+import Shipping from './Shipping';
+import ProductDetailsContainer from './containers/ProductDetailsContainer';
 import {products} from './products'
 import{Link, BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import './style.css';
+
 
 
 class App extends Component {
@@ -22,7 +28,13 @@ class App extends Component {
   }
 
   renderDetails(){
-    return <ProductDetails></ProductDetails>
+    return <ProductDetailsContainer></ProductDetailsContainer>
+  }
+  renderCart(){
+    return <CartContainer> </CartContainer>
+  }
+  renderShipping(){
+    return <Shipping></Shipping>
   }
   
 
@@ -34,6 +46,8 @@ class App extends Component {
           <div className="container">
             <Route exact path='/' component={this.renderHome} ></Route>
             <Route exact path='/products/:productId' component={this.renderDetails} ></Route>
+            <Route exact path='/cart' component={this.renderCart} ></Route>
+            <Route exact path='/shipping' component={this.renderShipping} ></Route>
           </div>
           
         </div>
@@ -44,4 +58,10 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+const rootComponent =(
+<Provider store={store}>
+    <App />
+</Provider>
+);
+
+render(rootComponent, document.getElementById('root'));
